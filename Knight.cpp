@@ -1,13 +1,10 @@
-#ifndef KNIGHT_H_
-#define KNIGHT_H_
-#include "Knight.h"
-#endif 
+#include "Knight.hpp"
+
 Knight::Knight() {}
 
 Knight::Knight(int x, int y,int p)
 {
-	Piece::Piece(x, y,p);
-	symbol = '4';
+	Piece::init(x, y, p, KNIGHT_SYMBOL);
 }
 
 int Knight::valid_move(int target_x, int target_y) {

@@ -1,15 +1,12 @@
-#ifndef BISHOP_H_
-#define BISHOP_H_
-#include "Bishop.h"
-#endif 
+#include "Bishop.hpp"
+
 Bishop::Bishop() {}
 Bishop::Bishop(int x, int y,int p)
 {
-	Piece::Piece(x,y,p);
-	symbol = '1';
+	Piece::init(x, y, p, BISHOP_SYMBOL);
 }
 
-int Bishop::valid_move(int target_x, int target_y) {
+int Bishop::valid_move(int target_x, int target_y){
 	if (!validinput(target_x, target_y)) {
 		return 0;
 	}

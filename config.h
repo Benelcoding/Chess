@@ -1,0 +1,6 @@
+#define ROOK_SYMBOL 'U'
+#define QUEEN_SYMBOL 'Q'
+#define PAWN_SYMBOL 'i'
+#define KING_SYMBOL 'K'
+#define KNIGHT_SYMBOL '4'
+#define BISHOP_SYMBOL '1'

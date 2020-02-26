@@ -1,13 +1,10 @@
-#ifndef KING_H_
-#define KING_H_
-#include "King.h"
-#endif 
+#include "King.hpp"
+
 King::King() {}
 
 King::King(int x, int y,int p)
 {
-	Piece::Piece(x, y,p);
-	symbol = 'K';
+	Piece::init(x, y, p, KING_SYMBOL);
 }
 
 int King::valid_move(int target_x, int target_y) {

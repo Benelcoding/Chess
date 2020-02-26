@@ -1,13 +1,10 @@
-#ifndef QUEEN_H_
-#define QUEEN_H_
-#include "Queen.h"
-#endif 
+#include "Queen.hpp"
+
 Queen::Queen() {}
 
 Queen::Queen(int x, int y,int p)
 {
-	Piece::Piece(x, y, p);
-	symbol = 'Q';
+	Piece::init(x, y, p, QUEEN_SYMBOL);
 }
 
 int Queen::valid_move(int target_x, int target_y) {

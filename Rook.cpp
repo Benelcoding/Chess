@@ -1,18 +1,16 @@
-#ifndef ROOK_H_
-#define ROOK_H_
-#include "Rook.h"
-#endif 
+#include "Rook.hpp"
 Rook::Rook() {}
 
 Rook::Rook(int x, int y,int p)
 {
-	Piece::Piece(x, y, p);
-	symbol = 'U';
+	Piece::init(x, y, p,ROOK_SYMBOL);
 }
 
 int Rook::valid_move(int target_x, int target_y) {
-	if (!validinput(target_x, target_y)) {
-		return 0;
+	if (validinput(target_x, target_y)) {
+		if ((target_x == this->x_position) || (target_y == this->y_position)) {
+			return 1;
+		}
 	}
-	return 1;
+	return 0;
 }
