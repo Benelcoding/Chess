@@ -16,7 +16,7 @@ int Piece::valid_move(int target_x, int target_y) {
 	return 0;
 }
 
-int Piece::validinput(int target_y, int target_x) {
+int Piece::validinput(int target_x, int target_y) {
 	int on_the_board = !(target_x > 8 || target_x < 1 || target_y < 1 || target_y>8);
 	int same_place = (target_x == this->x_position) && (target_y == this->y_position);
 	return on_the_board && (!same_place);
