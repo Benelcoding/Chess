@@ -8,7 +8,7 @@ Rook::Rook(int x, int y,int p)
 
 int Rook::valid_move(int target_x, int target_y) {
 	if (validinput(target_x, target_y)) {
-		if ((target_x == this->x_position) || (target_y == this->y_position)) {
+		if ((target_x == get_x()) || (target_y == get_y())) {
 			return 1;
 		}
 	}

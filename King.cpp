@@ -8,8 +8,10 @@ King::King(int x, int y,int p)
 }
 
 int King::valid_move(int target_x, int target_y) {
-	if (!validinput(target_x, target_y)) {
-		return 0;
+	if (validinput(target_x, target_y)) {
+		Point t;
+		t.init(target_x, target_y);
+		return ring(t, this->pos, 1);
 	}
-	return 1;
+	return 0;
 }
