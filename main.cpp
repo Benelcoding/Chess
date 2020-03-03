@@ -33,9 +33,9 @@ int main() {
 	Knight tknight(3, 3, 2);
 	Rook tr(4, 2, 1);
 	Pawn tp(8, 6, 2);
-	std::cout << (tq).get_x() << (tq).get_y() << "\n";
-	std::cout << (tq).valid_move(7, 1) <<"\n";
-	std::cout << (tq).valid_move(8, 0) << "\n";
-	std::cout << (tq).valid_move(1, 7) << "\n";
+	std::cout << (tknight).get_x() << (tknight.get_y()) << "\n";
+	std::cout << (tknight).valid_move(5, 4) <<"\n";
+	std::cout << (tknight).valid_move(1, 4) << "\n";
+	std::cout << (tknight).valid_move(5, 2) << "\n";
 	system("pause");
 }

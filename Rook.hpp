@@ -9,4 +9,3 @@ public:
 	Rook(int x , int y,int p);//constructor
 	Rook();//default constructor.
 };
-
