@@ -5,8 +5,8 @@
 class Bishop : public Piece
 {
 public:
-	Bishop(int x, int y,int p);
-	int valid_move(int target_x, int target_y) override;
-	Bishop();
+	Bishop();//default constructor.
+	Bishop(int x, int y,int p);//constructor.
+	int valid_move(int target_x, int target_y) override;//uses the function of its parent class but overrides it to fit its needs.
 };
 

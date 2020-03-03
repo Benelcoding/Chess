@@ -1,7 +1,7 @@
 #include "Rook.hpp"
-Rook::Rook() {}
+Rook::Rook() {}//default constructor.
 
-Rook::Rook(int x, int y,int p)
+Rook::Rook(int x, int y,int p)//constructs Rook.
 {
 	Piece::init(x, y, p,ROOK_SYMBOL);
 }

@@ -1,9 +1,8 @@
 #include "Queen.hpp"
 
-Queen::Queen() {}
+Queen::Queen() {}//default constructor.
 
-Queen::Queen(int x, int y,int p)
-{
+Queen::Queen(int x, int y,int p){ //constructs Queen.
 	Piece::init(x, y, p, QUEEN_SYMBOL);
 }
 

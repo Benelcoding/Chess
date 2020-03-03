@@ -22,10 +22,10 @@ int Piece::validinput(int target_x, int target_y) {
 	return on_the_board && (!same_place);
 }
 
-void Piece::init(int x, int y, int p,char s){
+void Piece::init(int x, int y, int p,char s){//initializes Piece.
 	pos.x=x;
 	pos.y=y;
 	player=p;
 	symbol = s;
 }
-Piece::Piece(){}
+Piece::Piece(){}//default constructor.
