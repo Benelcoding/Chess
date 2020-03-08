@@ -1,12 +1,15 @@
 #include "func_declarations.hpp"
 #include "config.h"
 
+enum Player { White = 1 ,Black }; //enumeration for the player number-> color, 1 is white and 2 is black
+
 class Piece {
 protected:
 	Point pos;
 	int player = 0;
-	char symbol = '0';
 public:
+	char symbol = '0';
+
 	void init(int x, int y, int p, char s);//initializes Piece.
 	Piece();//default constructor.
 	//simple get functions:
