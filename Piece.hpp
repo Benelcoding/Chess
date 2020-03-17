@@ -1,14 +1,25 @@
-#include "func_declarations.hpp"
+#ifndef IOSTREAM_
+#define IOSTREAM_
+#include <iostream>
+#endif 
 #include "config.h"
+
+struct Point {//initializes the struct Point's fields.
+	void init(int x, int y);
+	int x = 0;
+	int y = 0;
+};
 
 enum Player { White = 1 ,Black }; //enumeration for the player number-> color, 1 is white and 2 is black
 
 class Piece {
-protected:
+public:
 	Point pos;
 	int player = 0;
-public:
-	char symbol = '0';
+	int has_piece_up_left = 0;
+	int has_piece_up_right = 0;
+
+	char symbol = EMPTY_SYMBOL;
 
 	void init(int x, int y, int p, char s);//initializes Piece.
 	Piece();//default constructor.

@@ -55,9 +55,21 @@ int Board::move_piece(int x1,int y1, int x2, int y2) {
 		board[x2][y2] = board[x1][y1];
 		board[x1][y1] = Piece();
 		std::cout << board[x1][y1].symbol << board[x2][y2].symbol << "\n";
+		if (board[x2][y2].symbol == PAWN_SYMBOL) {
+			int d = 1;
+			if (board[x2][y2].player == 2) {
+				d = -1;
+			}
+			(board[x2][y2]).has_piece_up_left=(board[x2-d][y2+d].symbol!=EMPTY_SYMBOL);
+			(board[x2][y2]).has_piece_up_right = (board[x2 + d][y2 + d].symbol != EMPTY_SYMBOL);
+		}
 		return 1;
 	}
 	return 0;
+}
+
+int Board::has_a_piece(int x, int y) {  //Checks the board for a piece, returns 1 if there is one and 0 if there isnt.
+	return !(this->board[x][y].symbol == '0');
 }
 
 Board::Board()

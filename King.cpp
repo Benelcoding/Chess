@@ -15,3 +15,6 @@ int King::valid_move(int target_x, int target_y) { //Checks if the coordinated i
 	}
 	return 0;
 }
+int King::ring_around_king(Point a, Point b) { //checks if point b is in the immediate ring around point a.
+	return (std::abs(a.x - b.x)<2) && (std::abs(a.y - b.y)<2);
+}

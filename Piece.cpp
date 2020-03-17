@@ -1,4 +1,10 @@
 #include "Piece.hpp"
+
+void Point::init(int x, int y) { //initializes the struct Point's fields.
+	this->y = y;
+	this->x = x;
+}
+
 int Piece::get_x() {
 	return pos.x;
 }
@@ -18,10 +24,7 @@ int Piece::valid_move(int target_x, int target_y) {
 	return 0;
 }
 
-int Piece::validinput(int target_x, int target_y) {
-	int same_place = (target_x == this->pos.x) && (target_y == this->pos.y);
-	return (!same_place);
-}
+
 
 void Piece::init(int x, int y, int p,char s){//initializes Piece.
 	pos.x=x;

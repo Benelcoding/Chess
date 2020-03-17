@@ -29,6 +29,11 @@ public:
 	void make_board();
 	void display_board();
 	int move_piece(int x1, int x2, int y1, int y2);
+	int has_a_piece( int x, int y);
+	/* has_a_piece:
+	Entrance clause: gets the target position.
+	Exit clause: answers the question of if the target position has a piece occupying it.
+	*/
 	Board();
 };
 

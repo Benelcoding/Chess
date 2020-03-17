@@ -2,6 +2,7 @@
 #define PIECE_HPP_
 #include "Piece.hpp"
 #endif 
+
 class Pawn : public Piece
 {
 	int after_first_move = 0;

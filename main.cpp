@@ -1,10 +1,12 @@
 #pragma once
-#include <iostream>
 #ifndef BOARD_HPP_
 #define BOARD_HPP_
 #include "Board.hpp"
 #endif 
-
+#ifndef FUNC_DECLARATIONS_HPP_
+#define FUNC_DECLARATIONS_HPP_
+#include "func_declarations.hpp"
+#endif 
 
 
 int main() {
@@ -13,7 +15,7 @@ int main() {
 	int x1, y1, x2, y2;
 	do{
 		B.display_board();
-		if (get_input(&x1, &x2, &y1, &y2)) {  //checks if the user wants to exit
+		if (get_input(&x1, &y1, &x2, &y2)&&valid_input(x1,y1,x2,y2)) {  //checks if the user wants to exit
 			if (!B.move_piece(x1, y1, x2, y2)) {
 				std::cout << "Invalid Move! Enter a different input please.\n";
 			}
