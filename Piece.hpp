@@ -2,6 +2,10 @@
 #define IOSTREAM_
 #include <iostream>
 #endif 
+#ifndef FUNC_DECLARATIONS_HPP_
+#define FUNC_DECLARATIONS_HPP_
+#include "func_declarations.hpp"
+#endif 
 #include "config.h"
 
 struct Point {//initializes the struct Point's fields.
@@ -36,10 +40,5 @@ public:
 	/* valid_move:
 	Entrance clause: gets the coordinates of a position.
 	Exit clause: answers the question of if moving the piece there is allowed/valid.
-	*/
-	int validinput(int target_x, int target_y);
-	/* validinput:
-	Entrance clause: gets the coordinates of a position.
-	Exit clause: answers the question of if the position is on the board.
 	*/
 };

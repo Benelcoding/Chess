@@ -7,10 +7,15 @@ int onboard(int x1, int y1){
 }
 
 int get_input(int* x1, int* y1, int* x2, int* y2) {
-	std::cin >> *x1 >> *y1 >> *x2 >> *y2;
-	std::cout << *x1 << *y1 << *x2 << *y2;
-	int exit_input = (*x1 != -1) && (*y1 != -1) && (*x2 != -1) && (*y2 != -1);
-	return exit_input;
+	std::cin >> *x1 ;
+	if (*x1 == -1) { return 0; }
+	std::cin >> *y1;
+	if (*y1 == -1) { return 0; }
+	std::cin >> *x2;
+	if (*x2 == -1) { return 0; }
+	std::cin >> *y2;
+	if (*y2 == -1) { return 0; }
+	return 1;
 }
 
 int valid_input(int x1, int y1, int x2, int y2) {

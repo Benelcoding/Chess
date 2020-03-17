@@ -14,7 +14,7 @@ int Piece::get_y() {
 }
 
 void Piece::move(int x, int y) {
-	if (valid_move(x, y)&&validinput(x,y)) {
+	if (valid_move(x, y)) {
 		pos.x = x;
 		pos.y = y;
 	}
