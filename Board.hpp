@@ -28,6 +28,7 @@ public:
 	Piece board[8][8];
 	void make_board();
 	void display_board();
+	int move_piece(int x1, int x2, int y1, int y2);
 	Board();
 };
 

@@ -49,5 +49,16 @@ void Board::make_board() {
 	/*FIN*/
 }
 
+int Board::move_piece(int x1,int y1, int x2, int y2) {
+	std::cout << x1 << y1 << x2 << y2 << "\n";
+ 	if (board[x1][y1].valid_move(x2,y2)) {
+		board[x2][y2] = board[x1][y1];
+		board[x1][y1] = Piece();
+		std::cout << board[x1][y1].symbol << board[x2][y2].symbol << "\n";
+		return 1;
+	}
+	return 0;
+}
+
 Board::Board()
 {}
