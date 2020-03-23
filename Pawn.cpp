@@ -8,6 +8,7 @@ Pawn::Pawn(int x, int y,int p)//constructs Pawn.
 }
 
 int Pawn::valid_move(int target_x, int target_y) { //Checks if the coordinated inputted are considered a valid move for the pawn.
+	std::cout << "In Pawn's valid_move func\n";
 	int y_diff = target_y - pos.y;
 	int x_diff = target_x - pos.x;
 	if (this->player == 2) {
@@ -18,10 +19,11 @@ int Pawn::valid_move(int target_x, int target_y) { //Checks if the coordinated i
 		if ((has_piece_up_left && (x_diff < 0)) || (has_piece_up_right && (x_diff > 0))) {
 			return 1;
 		}
-		else {//if the pawn moves straight.
-			if ((y_diff == 1) || (y_diff == 1 + after_first_move)) {
-				return 1;
-			}
+	}
+	else {//if the pawn moves straight.
+		if ((y_diff == 1) || (y_diff == 1 + before_first_move)) {
+			before_first_move = 0;
+			return 1;
 		}
 	}
 	return 0;

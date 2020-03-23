@@ -9,12 +9,16 @@ int onboard(int x1, int y1){
 int get_input(int* x1, int* y1, int* x2, int* y2) {
 	std::cin >> *x1 ;
 	if (*x1 == -1) { return 0; }
+	(*x1)--;
 	std::cin >> *y1;
 	if (*y1 == -1) { return 0; }
+	(*y1)--;
 	std::cin >> *x2;
 	if (*x2 == -1) { return 0; }
+	(*x2)--;
 	std::cin >> *y2;
 	if (*y2 == -1) { return 0; }
+	(*y2)--;
 	return 1;
 }
 

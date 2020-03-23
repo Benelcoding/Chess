@@ -21,6 +21,7 @@ void Piece::move(int x, int y) {
 }
 
 int Piece::valid_move(int target_x, int target_y) {
+	std::cout << "In Piece's valid_move func\n";
 	return 0;
 }
 
@@ -33,5 +34,5 @@ void Piece::init(int x, int y, int p,char s){//initializes Piece.
 	symbol = s;
 }
 Piece::Piece() { 
-	symbol = ' '; 
+	symbol = EMPTY_SYMBOL; 
 }//default constructor.

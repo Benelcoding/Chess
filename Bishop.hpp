@@ -7,6 +7,6 @@ class Bishop : public Piece
 public:
 	Bishop();//default constructor.
 	Bishop(int x, int y,int p);//constructor.
-	virtual int valid_move(int target_x, int target_y) override;//uses the function of its parent class but overrides it to fit its needs.
+	int valid_move(int target_x, int target_y) override;//uses the function of its parent class but overrides it to fit its needs.
 };
 

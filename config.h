@@ -4,4 +4,4 @@
 #define KING_SYMBOL 'K'
 #define KNIGHT_SYMBOL '4'
 #define BISHOP_SYMBOL '1'
-#define EMPTY_SYMBOL '0'
+#define EMPTY_SYMBOL ' '

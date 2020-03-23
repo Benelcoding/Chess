@@ -5,7 +5,7 @@
 class King : public Piece
 {
 public:
-	virtual int valid_move(int target_x, int target_y) override;//uses the function of its parent class but overrides it to fit its needs.
+	int valid_move(int target_x, int target_y) override;//uses the function of its parent class but overrides it to fit its needs.
 	King(int x, int y, int p);//constructor.
 	King();//default constructor.
 	int ring_around_king(Point a, Point b);

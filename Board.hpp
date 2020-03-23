@@ -25,7 +25,7 @@
 class Board
 {
 public:
-	Piece board[8][8];
+	Piece* board [8][8];
 	void make_board();
 	void display_board();
 	int move_piece(int x1, int x2, int y1, int y2);
@@ -34,6 +34,7 @@ public:
 	Entrance clause: gets the target position.
 	Exit clause: answers the question of if the target position has a piece occupying it.
 	*/
+	void check_in_front_of_pawn(int x, int y, int iteration);
 	Board();
 };
 

@@ -2,6 +2,10 @@
 #define IOSTREAM_
 #include <iostream>
 #endif 
+#ifndef CONFIG_H_
+#define CONFIG_H_
+#include "config.h"
+#endif 
 #include <cmath>
 
 int onboard(int x1, int y1);
