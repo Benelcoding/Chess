@@ -8,14 +8,14 @@ Pawn::Pawn(int x, int y,int p)//constructs Pawn.
 }
 
 int Pawn::valid_move(int target_x, int target_y) { //Checks if the coordinated inputted are considered a valid move for the pawn.
-	std::cout << "In Pawn's valid_move func\n";
+	std::cout << "In Pawn's valid_move func, player is:"<<this->player<<"\n";
 	int y_diff = target_y - pos.y;
 	int x_diff = target_x - pos.x;
 	if (this->player == 2) {
 		y_diff *= -1; //if the pawn belongs to the second player, then it moves downwards and not upwards.
 		x_diff *= -1; //if the pawn belongs to the second player, then the directions are reversed.
 	}
-	if ((std::abs(x_diff) == 1) && (y_diff) == 1) {//in the case that the pawn wants to attack (move diagonally).
+	if (((int)std::abs(x_diff) == 1) && (y_diff == 1)) {//in the case that the pawn wants to attack (move diagonally).
 		if ((has_piece_up_left && (x_diff < 0)) || (has_piece_up_right && (x_diff > 0))) {
 			return 1;
 		}

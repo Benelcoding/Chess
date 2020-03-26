@@ -5,3 +5,7 @@
 #define KNIGHT_SYMBOL '4'
 #define BISHOP_SYMBOL '1'
 #define EMPTY_SYMBOL ' '
+
+#define P1_COLOR 15
+#define P2_COLOR 12
+#define DEFAULT_TEXT_COLOR 15

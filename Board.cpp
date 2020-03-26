@@ -1,4 +1,7 @@
 #include "Board.hpp"
+#include <windows.h>
+
+HANDLE c_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 
 void Board::display_board() {
 	std::cout << "\n   ";
@@ -9,7 +12,10 @@ void Board::display_board() {
 	for (int j = 7;j > -1;j--) {
 		std::cout << j+1 <<" ";
 		for (int i = 0;i < 8;i++) {
-			std::cout << " | " << board[i][j]->symbol;
+			std::cout << " | ";
+			set_text_color(i, j);
+			std::cout << board[i][j]->symbol;
+			SetConsoleTextAttribute(c_handle,DEFAULT_TEXT_COLOR);
 		}
 		std::cout << " |\n   ";
 		for (int i = 0;i < 34;i++) {
@@ -72,12 +78,14 @@ int Board::move_piece(int x1,int y1, int x2, int y2) {
 	std::cout << x2 << y2 << " " << (board[x2][y2])->symbol << "\n";
 	//the following gets important parameters for pawns.
 	if ((board[x1][y1])->symbol == PAWN_SYMBOL) {
-		check_in_front_of_pawn(x1, y1, 0);
+		check_in_front_of_pawn(x1, y1);
 	}
 
  	if (board[x1][y1]->valid_move(x2,y2)) {
 		board[x2][y2] = board[x1][y1];
 		board[x1][y1] = new Piece();
+		board[x2][y2]->pos.x = x2;
+		board[x2][y2]->pos.y = y2;
 		std::cout << (board[x1][y1])->symbol << (board[x2][y2])->symbol << "\n";
 
 		return 1;
@@ -89,7 +97,7 @@ int Board::has_a_piece(int x, int y) {  //Checks the board for a piece, returns 
 	return !((*this->board[x][y]).symbol == '0');
 }
 
-void Board::check_in_front_of_pawn(int x, int y,int iteration) { 
+void Board::check_in_front_of_pawn(int x, int y) { 
 		int d = 1;
 		if ((board[x][y])->player == 2) {
 			d = -1;
@@ -100,6 +108,15 @@ void Board::check_in_front_of_pawn(int x, int y,int iteration) {
 		if (onboard(x + d, y + d)) {
 			board[x][y]->has_piece_up_right = (board[x + d][y + d]->symbol != EMPTY_SYMBOL);
 		}
+}
+
+void Board::set_text_color(int x, int y) {
+	if (board[x][y]->player == 2) {
+		SetConsoleTextAttribute(c_handle,P2_COLOR);
+	}
+	else {
+		SetConsoleTextAttribute(c_handle,P1_COLOR);
+	}
 }
 
 Board::Board()
